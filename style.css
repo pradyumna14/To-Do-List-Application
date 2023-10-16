@@ -359,7 +359,7 @@ input[type="checkbox"]:not(.task-completed) {
 }
 
 input[type="checkbox"]:not(.task-completed)::before {
-  content: "";
+  content: "🌙"; 
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -367,8 +367,16 @@ input[type="checkbox"]:not(.task-completed)::before {
   position: absolute;
   top: 0;
   left: 0;
-  transition: 0.5s;
+  font-size: 25px; 
+  color: #000; 
+  transform: scale(1); 
+  transition: transform 0.5s;
 }
+
+input[type="checkbox"]:checked:not(.task-completed)::before {
+  transform: scale(0); 
+}
+
 
 input[type="checkbox"]:not(.task-completed):checked::before {
   transform: translateX(100%);
