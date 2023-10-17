@@ -360,6 +360,7 @@ input[type="checkbox"]:not(.task-completed) {
 
 input[type="checkbox"]:not(.task-completed)::before {
   content: "";
+  content: "🌙"; 
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -368,90 +369,24 @@ input[type="checkbox"]:not(.task-completed)::before {
   top: 0;
   left: 0;
   transition: 0.5s;
+  font-size: 25px; 
+  color: #000; 
+  transform: scale(1); 
+  transition: transform 0.5s;
 }
+
+input[type="checkbox"]:checked:not(.task-completed)::before {
+  transform: scale(0); 
+}
+
 
 input[type="checkbox"]:not(.task-completed):checked::before {
   transform: translateX(100%);
   background: #fff;
 }
-/* CSS for styling the confirmation dialog */
-.custom-confirm,
-.custom-confirm-all {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.confirm-content,
-.confirm-content-all {
-  background-color: #fff;
-  padding: 20px;
-  top: 20px;
-  border-radius: 5px;
-  text-align: center;
-  position: relative;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #000;
-}
-h4 {
-  color: #000;
-}
-
-.confirm-content,
-.confirm-content-all p {
-  margin-bottom: 20px;
-}
-
-#confirm-yes,
-#confirm-no,
-#confirm-yes-all,
-#confirm-no-all {
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-#confirm-yes,
-#confirm-yes-all {
-  background-color: #5cb85c;
-  color: #fff;
-}
-
-#confirm-no,
-#confirm-no-all {
-  background-color: #d9534f;
-  color: #fff;
-}
-
-/* Rest of your CSS styles remain unchanged */
-
 /* input[type="checkbox"]:not(.task-completed):checked {
     background: linear-gradient(to right, rgba(126, 64, 246, 1), rgba(80, 139, 252, 1));
 } */
-
 @media screen and (max-width: 768px) {
   .mode-toggle {
     margin-left: 20px;
